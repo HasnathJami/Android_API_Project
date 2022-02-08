@@ -32,23 +32,6 @@ public class MainActivity extends AppCompatActivity {
                 Methods methods=RetrofitClient.getRetrofitInstance().create(Methods.class);
                 Call<ArrayList<Model>> call=methods.getAllData();
 
-
-
-                       // Model d=new Model();
-                        //d.setText(response.body().getText());
-                        //String email="";
-                       // ArrayList<Model>md;
-
-                       // for(Model d: data)
-                       // {
-                        //   email=email+d.getEmail()+"\n";
-
-                       // }
-
-                       // tv.setText(email);
-                       // tv.setText(d.getText());
-
-
                    call.enqueue(new Callback<ArrayList<Model>>() {
                        @Override
                        public void onResponse(Call<ArrayList<Model>> call, Response<ArrayList<Model>> response) {
@@ -61,13 +44,9 @@ public class MainActivity extends AppCompatActivity {
                            Float dd = null;
                            for(Model mode:m)
                            {
-                              // tv.setText(mode.getTitle());
-                              // store=store+mode.getBody()+"\n";
-                              // tv.setText(mode.getBody());
                                dd=mode.getId();
+                               break;
                            }
-                          // tv.setText(store);
-                           //String i = (String) id;
 
                            tv.setText(dd.toString());
 
